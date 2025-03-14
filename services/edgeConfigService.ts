@@ -11,12 +11,12 @@ class EdgeConfigService {
     this.client = createClient(process.env.EDGE_CONFIG);
   }
 
-  async getValue<T>(key: string): Promise<T> {
+  async getValue<T>(key: string): Promise<T | undefined> {
     try {
       return await this.client.get<T>(key);
     } catch (error) {
       console.error(`Error fetching Edge Config value for key: ${key}`, error);
-      return null;
+      return {} as T;
     }
   }
 
