@@ -1,4 +1,4 @@
-import Button from "@components/button/Button";
+import FormComponent from "@components/FormComponent";
 export default function Home() {
   return (
     <div className="flex flex-col items-center">
@@ -6,7 +6,7 @@ export default function Home() {
       <div>
         <img src="partecipazione.png" alt="Partecipazione del matrimonio"></img>
       </div>
-      <Button></Button>
+      <FormComponent></FormComponent>
     </div>
   );
 }
