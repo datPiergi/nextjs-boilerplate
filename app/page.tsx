@@ -1,4 +1,4 @@
-import FormComponent from "@components/FormComponent";
+import FormComponent from "@/components/GuestForm";
 export default function Home() {
   return (
     <div className="flex flex-col items-center">
