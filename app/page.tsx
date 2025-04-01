@@ -1,6 +1,7 @@
 import GuestForm from "@/components/GuestForm";
 import Hero from "@/components/Hero";
 import CustomNavbar from "@/components/CustomNavbar";
+import Location from "@/components/Location";
 
 export default function Home() {
   return (
@@ -9,6 +10,7 @@ export default function Home() {
         <CustomNavbar />
       </div>
       <Hero />
+      <Location />
       <div>
         <img src="partecipazione.png" alt="Partecipazione del matrimonio"></img>
       </div>
