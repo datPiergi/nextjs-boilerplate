@@ -11,9 +11,10 @@ const CustomNavbar: React.FC = () => {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ms-auto">
-            <Nav.Link href="#info">Informazioni</Nav.Link>
-            <Nav.Link href="#location">Luogo</Nav.Link>
+            <Nav.Link href="#church">Chiesa</Nav.Link>
+            <Nav.Link href="#location">Location</Nav.Link>
             <Nav.Link href="#rsvp">Conferma la tua presenza</Nav.Link>
+            <Nav.Link href="#donation">Dateci i soldi</Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>

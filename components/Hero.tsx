@@ -2,28 +2,32 @@
 
 import React from "react";
 import Image from "next/image";
+import WeddingInvitationModal from "./WeddingInvitationModal";
 
 const Hero: React.FC = () => {
   return (
     <div className="relative w-full h-screen flex flex-col items-center justify-center text-white text-center px-6">
       {/* Background Image */}
       <Image
-        src="/hero-bg.jpg"
+        src="/hero-bg-extended.png"
+        fill
         alt="Wedding background"
-        layout="fill"
-        objectFit="cover"
-        quality={90}
+        style={{
+          objectFit: 'cover',
+          objectPosition: 'bottom',
+          zIndex: -1,
+        }}
         priority
-        className="-z-10"
       />
 
       {/* Overlay to Darken the Image */}
-      <div className="absolute inset-0 bg-black bg-opacity-50"></div>
+      <div className="absolute inset-0 bg-black/25"></div>
 
       {/* Text Content */}
       <div className="relative z-10">
-        <h1 className="text-5xl font-bold">Erika & Piergiorgio</h1>
+        <span className="text-7xl">Erika & Piergiorgio</span>
         <p className="text-lg mt-4">Ci sposiamo! Unisciti a noi in questo giorno speciale.</p>
+        <WeddingInvitationModal />
       </div>
     </div>
   );

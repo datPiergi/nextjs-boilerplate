@@ -3,7 +3,11 @@
 import { useState } from "react";
 import { Form, Button, Container, Card } from "react-bootstrap";
 
-const GuestForm = () => {
+interface GuestFormProps {
+  id: string;
+}
+
+const GuestForm: React.FC<GuestFormProps> = ({ id }) => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -38,7 +42,7 @@ const GuestForm = () => {
   };
 
   return (
-    <Container className="flex justify-center items-center min-h-screen">
+    <Container id={id} className="flex justify-center items-center min-h-screen">
       <Card className="shadow-lg rounded-2xl p-6 w-full max-w-lg">
         <Card.Body>
           <h2 className="text-2xl font-semibold text-center mb-4">💍 RSVP for Our Wedding</h2>
