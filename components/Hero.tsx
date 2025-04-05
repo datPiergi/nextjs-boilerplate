@@ -3,6 +3,14 @@
 import React from "react";
 import Image from "next/image";
 import WeddingInvitationModal from "./WeddingInvitationModal";
+import { Rouge_Script } from 'next/font/google';
+
+
+export const rougeScript = Rouge_Script({
+  weight: "400",
+  subsets: ["latin"],
+  variable: "--font-rouge-script",
+});
 
 const Hero: React.FC = () => {
   return (

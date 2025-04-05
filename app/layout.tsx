@@ -1,16 +1,10 @@
 import type { Metadata } from "next";
-import { Rouge_Script, EB_Garamond } from 'next/font/google';
+import { EB_Garamond } from 'next/font/google';
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./globals.css";
 
 const garamond = EB_Garamond({
   subsets: ["latin"],
-});
-
-export const rougeScript = Rouge_Script({
-  weight: "400",
-  subsets: ["latin"],
-  variable: "--font-rouge-script",
 });
 
 export const metadata: Metadata = {
