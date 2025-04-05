@@ -1,8 +1,8 @@
 @import "tailwindcss";
 
 :root {
-  --background: #fbf7c8;
-  --foreground: #171717;
+  --background: #f7f2e9;
+  --foreground: #160f0f;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -15,4 +15,10 @@
 body {
   color: var(--foreground);
   background: var(--background);
+}
+
+.font-script {
+  font-family: "Rouge Script", cursive;
+  font-weight: 400;
+  font-style: normal;
 }

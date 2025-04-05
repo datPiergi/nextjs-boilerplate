@@ -25,8 +25,8 @@ const Hero: React.FC = () => {
 
       {/* Text Content */}
       <div className="relative z-10">
-        <span className="text-7xl">Erika & Piergiorgio</span>
-        <p className="text-lg mt-4">Ci sposiamo! Unisciti a noi in questo giorno speciale.</p>
+        <span className="font-script text-9xl">Erika & Piergiorgio</span>
+        <p className="text-2xl mt-4">Ci sposiamo! Unisciti a noi in questo giorno speciale.</p>
         <WeddingInvitationModal />
       </div>
     </div>

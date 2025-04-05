@@ -7,12 +7,10 @@ import GiftBox from "@/components/GiftBox";
 export default function Home() {
   return (
     <div className="flex flex-col items-center">
-      <div className="mb-14">
-        <CustomNavbar />
-      </div>
       <Hero />
+      <CustomNavbar />
       <Location
-        title="Chiesa di San Matteo Erika"
+        title="Chiesa di San Matteo"
         address="📍 Via Dei Perroni, 29 - Lecce"
         mapLink="https://www.google.com/maps/place/Chiesa+di+San+Matteo/@40.3505379,18.1691488,16z/"
         imageSrc="/maps-church.jpg"
