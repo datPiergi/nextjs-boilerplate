@@ -41,8 +41,8 @@ const CountdownTimer: React.FC<CountdownTimerProps> = ({ className = "" }) => {
   }, []);
 
   return (
-    <div className={className}>
-      <div className="text-center">
+    <div className={`w-full max-w-[320px] min-w-[280px] flex flex-col items-center border border-white rounded-2xl px-6 py-4 text-white font-serif ${className}`}>
+      <div className="text-center mb-3">
         <p className="text-xl font-semibold">Save The Date!</p>
         <p className="text-sm">14 Giugno 2025 - 16:00</p>
       </div>

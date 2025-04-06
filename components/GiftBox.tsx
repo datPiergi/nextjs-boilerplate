@@ -19,24 +19,25 @@ const GiftBox: React.FC<GiftBoxProps> = ({ iban, name, id, className }) => {
   };
 
   return (
-    <div id={id} className={`w-full ${className} bg-[#F7E7CE] p-6 rounded-lg shadow-md max-w-3xl mx-auto text-center mb-8}`}>
-      <h2 className="text-2xl font-bold text-gray-800">🎁 Un gesto d’amore</h2>
-      <p className="text-lg text-gray-700 mt-3">
-        Se desiderate farci un regalo, potete inviare un contributo al nostro IBAN:
-      </p>
+    <div id={id} className={`w-full max-w-6xl mx-auto px-8 text-2xl ${className}`}>
+      <div className="max-w-3xl mx-auto text-center py-12 font-serif text-[#8b8585]">
+        <p className="text-lg italic">
+          Il dono più grande che potete farci è la vostra presenza, ma se vi facesse piacere contribuire al nostro futuro insieme potete farlo qui.
+        </p>
 
-      {/* IBAN Box */}
-      <div className="flex items-center justify-between bg-white p-3 rounded-lg mt-4 shadow-md border border-gray-300">
-        <span className="text-lg font-mono text-gray-800 select-all">{iban}</span>
-        <button onClick={handleCopy} className="ml-3 text-gray-600 hover:text-gray-800 text-xl">
-          <i className={`bi ${copied ? "bi-clipboard-check" : "bi-clipboard"}`}></i>
-        </button>
+        {/* IBAN Box */}
+        <div className="flex items-center justify-between bg-[#e5dfda] p-3 rounded-lg mt-6 shadow-md border border-gray-300">
+          <span className="text-lg select-all">{iban}</span>
+          <button onClick={handleCopy} className="ml-3 text-xl">
+            <i className={`bi ${copied ? "bi-clipboard-check" : "bi-clipboard"}`}></i>
+          </button>
+        </div>
+
+        <p className="mt-2">Intestato a: <strong>{name}</strong></p>
+        <p className="text-sm italic mt-4">
+          Grazie di cuore per il vostro affetto e la vostra generosità! ❤️
+        </p>
       </div>
-
-      <p className="text-gray-600 mt-2">Intestato a: <strong>{name}</strong></p>
-      <p className="text-sm text-gray-500 italic mt-4">
-        Grazie di cuore per il vostro affetto e la vostra generosità! ❤️
-      </p>
     </div>
   );
 };

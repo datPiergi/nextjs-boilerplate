@@ -5,13 +5,14 @@ import React from "react";
 interface SectionTitleProps {
   children: React.ReactNode;
   className?: string;
+  id?: string;
 }
 
-const SectionTitle: React.FC<SectionTitleProps> = ({ children, className = "" }) => {
+const SectionTitle: React.FC<SectionTitleProps> = ({ children, className = "", id }) => {
   return (
-    <h2 className={`text-3xl font-semibold font-serif text-center text-gray-800 mb-6 ${className}`}>
+    <div id={id} className={`text-center ${className}`}>
       {children}
-    </h2>
+    </div>
   );
 };
 

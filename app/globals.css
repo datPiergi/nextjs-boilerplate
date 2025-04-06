@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 :root {
-  --background: #f7f2e9;
+  --background: #f7f7f5;
   --foreground: #160f0f;
 }
 
@@ -21,4 +21,68 @@ body {
   font-family: "Rouge Script", cursive;
   font-weight: 400;
   font-style: normal;
+}
+
+.form-control:focus {
+  border-color: #8b8585;
+}
+.form-select:focus {
+  border-color: #8b8585;
+}
+
+nav {
+  .navbar-brand {
+    color: #8b8585;
+  }
+  .navbar-brand:hover {
+    color: #8b8585;
+  }
+  .navbar-nav .nav-link {
+    color: #8b8585;
+  }
+  .navbar-nav .nav-link:hover {
+    color: #8b8585;
+  }
+  .navbar-nav .nav-link.active {
+    color: #8b8585;
+  }
+  .navbar-nav .nav-link.active:hover {
+    color: #8b8585;
+  }
+  .navbar-nav .nav-link.disabled {
+    color: #8b8585;
+  }
+  .navbar-nav .nav-link.disabled:hover {
+    color: #8b8585;
+  }
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  color: white !important;
+}
+
+.swiper-button-next {
+  right: -20px;
+}
+
+.swiper-button-prev {
+  left: -20px;
+}
+
+@media (max-width: 767px) {
+  .swiper-button-next,
+  .swiper-button-prev {
+    display: none;
+  }
+}
+
+.swiper-slide {
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
 }

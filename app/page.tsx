@@ -1,46 +1,61 @@
 import GuestForm from "@/components/GuestForm";
 import Hero from "@/components/Hero";
 import CustomNavbar from "@/components/CustomNavbar";
-import Location from "@/components/Location";
+import ContactInfo from "@/components/ContactInfo";
 import GiftBox from "@/components/GiftBox";
 import SectionTitle from "@/components/SectionTitle";
-import CountdownTimer from "@/components/CountdownTimer";
-import WeatherWidget from "@/components/WeatherWidget";
+import EventInfoCard from "@/components/EventInfoCard";
+import WeddingTimeline from "@/components/WeddingTimeline";
+import SectionDivider from "@/components/SectionDivider";
+import PhotoCarousel from "@/components/PhotoCarousel";
 
 export default function Home() {
   return (
     <>
       <CustomNavbar />
-      <Hero />
-      <div className="grid grid-cols-1 gap-y-12 sm:grid-cols-2 lg:grid-cols-3 max-w-7xl mx-[100px] py-16">
+      <div className="relative">
+        <Hero />
+        <EventInfoCard /> {/* Place it immediately after Hero */}
+      </div>
+      <div className="grid grid-cols-1 gap-y-8 sm:grid-cols-2 lg:grid-cols-3 max-w-7xl mx-auto px-6 lg:px-12 py-16 pt-40 sm:pt-46 text-[#8b8585]">
 
-        <SectionTitle className="col-span-full">Dove si terrà</SectionTitle>
-        <Location
-          title="Chiesa di San Matteo"
-          address="📍 Via Dei Perroni, 29 - Lecce"
-          mapLink="https://www.google.com/maps/place/Chiesa+di+San+Matteo/@40.3505379,18.1691488,16z/"
-          imageSrc="/maps-church.jpg"
-          id="church"
-          className="col-span-full"
-        />
-        <Location
-          imageLeft
-          title="Tenuta Lucagiovanni"
-          address="📍 S.P. 361, km 4200 - Scorrano (LE)"
-          mapLink="https://www.google.it/maps/place/Tenuta+Lucagiovanni+Eventi/@40.0936915,18.2537423,17z/data=!4m15!1m8!3m7!1s0x1344177662b73915:0xe10e5b13ec4f0a2e!2sTenuta+Lucagiovanni+Eventi!8m2!3d40.0936713!4d18.2536879!10e5!16s%2Fg%2F1pxwpqqgz!3m5!1s0x1344177662b73915:0xe10e5b13ec4f0a2e!8m2!3d40.0936713!4d18.2536879!16s%2Fg%2F1pxwpqqgz?entry=ttu&g_ep=EgoyMDI1MDMyNS4xIKXMDSoJLDEwMjExNjM5SAFQAw%3D%3D"
-          imageSrc="/maps-reception.jpg"
-          id="location"
-          className="col-span-full"
-        />
+        <SectionTitle id="program" className="col-span-full text-5xl">WEDDING DAY</SectionTitle>
+        <SectionTitle className="col-span-full text-3xl">14 giugno 2025</SectionTitle>
+        <WeddingTimeline className="col-span-full" />
         <GuestForm
           id="rsvp"
           className="col-span-full"
         />
+        <SectionDivider className="col-span-full" />
         <GiftBox
-          iban="IT60X0542811101000000123456"
-          name="Erika & Piergiorgio"
+          iban="IT55E0200801767000105704751"
+          name="Erika Mazzeo e Piergiorgio Pietra"
           id="donation"
           className="col-span-full"
+        />
+        <ContactInfo id="contacts" className="col-span-full" />
+        <PhotoCarousel
+          className="col-span-full"
+          images={[
+            "/photo1.JPG",
+            "/photo2.JPG",
+            "/photo3.JPG",
+            "/photo4.JPG",
+            "/photo5.JPG",
+            "/photo6.JPG",
+            "/photo7.JPG",
+            "/photo8.JPG",
+            "/photo9.JPG",
+            "/photo10.JPG",
+            "/photo11.JPG",
+            "/photo12.JPG",
+            "/photo13.JPG",
+            "/photo14.JPG",
+            "/photo15.JPG",
+            "/photo16.JPG",
+            "/photo17.JPG",
+            "/photo18.JPG",
+          ]}
         />
       </div>
     </>
