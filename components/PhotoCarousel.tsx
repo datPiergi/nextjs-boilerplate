@@ -13,7 +13,7 @@ interface PhotoCarouselProps {
     id?: string;
 }
 
-const PhotoCarousel: React.FC<PhotoCarouselProps> = ({ images, className = "" , id}) => {
+const PhotoCarousel: React.FC<PhotoCarouselProps> = ({ images, className = "", id }) => {
     const [isOpen, setIsOpen] = useState(false);
     const [activeIndex, setActiveIndex] = useState(0);
     const modalRef = useRef<HTMLDivElement>(null);
@@ -42,7 +42,7 @@ const PhotoCarousel: React.FC<PhotoCarouselProps> = ({ images, className = "" , 
     }, [isOpen]);
 
     const handleOverlayClick = (e: React.MouseEvent<HTMLDivElement>) => {
-        if (modalRef.current && e.target === modalRef.current) {
+        if (e.target === e.currentTarget) {
             closeModal();
         }
     };
@@ -84,6 +84,15 @@ const PhotoCarousel: React.FC<PhotoCarouselProps> = ({ images, className = "" , 
                     className="fixed inset-0 bg-black/40 z-50 flex items-center justify-center"
                 >
                     <div className="relative w-full max-w-4xl">
+                        {/* Mobile close button */}
+                        <button
+                            onClick={closeModal}
+                            className="absolute top-4 right-8 text-white z-50 block sm:hidden"
+                            aria-label="Chiudi"
+                        >
+                            ✕
+                        </button>
+
                         <Swiper
                             modules={[Navigation]}
                             navigation
