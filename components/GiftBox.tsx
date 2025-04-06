@@ -6,9 +6,10 @@ interface GiftBoxProps {
   iban: string;
   name: string;
   id: string;
+  className?: string;
 }
 
-const GiftBox: React.FC<GiftBoxProps> = ({ iban, name, id }) => {
+const GiftBox: React.FC<GiftBoxProps> = ({ iban, name, id, className }) => {
   const [copied, setCopied] = useState(false);
 
   const handleCopy = () => {
@@ -18,8 +19,8 @@ const GiftBox: React.FC<GiftBoxProps> = ({ iban, name, id }) => {
   };
 
   return (
-    <div id={id} className="bg-[#F7E7CE] p-6 rounded-lg shadow-md max-w-3xl mx-auto text-center mb-8">
-      <h2 className="text-2xl font-bold text-gray-800">🎁 Un Regalo Speciale</h2>
+    <div id={id} className={`w-full ${className} bg-[#F7E7CE] p-6 rounded-lg shadow-md max-w-3xl mx-auto text-center mb-8}`}>
+      <h2 className="text-2xl font-bold text-gray-800">🎁 Un gesto d’amore</h2>
       <p className="text-lg text-gray-700 mt-3">
         Se desiderate farci un regalo, potete inviare un contributo al nostro IBAN:
       </p>
