@@ -26,14 +26,16 @@ const GiftBox: React.FC<GiftBoxProps> = ({ iban, name, id, className }) => {
         </p>
 
         {/* IBAN Box */}
-        <div className="flex items-center justify-between bg-[#e5dfda] p-3 rounded-lg mt-6 shadow-md border border-gray-300">
-          <span className="text-lg select-all">{iban}</span>
-          <button onClick={handleCopy} className="ml-3 text-xl">
-            <i className={`bi ${copied ? "bi-clipboard-check" : "bi-clipboard"}`}></i>
-          </button>
+        <div className="whitespace-nowrap bg-[#e5dfda] p-3 rounded-lg mt-6 shadow-md border border-gray-300">
+          <div className="inline-flex items-center gap-3">
+            <span className="text-sm sm:text-lg select-all">{iban}</span>
+            <button onClick={handleCopy} className="text-xl shrink-0">
+              <i className={`bi ${copied ? "bi-clipboard-check" : "bi-clipboard"}`}></i>
+            </button>
+          </div>
         </div>
 
-        <p className="mt-2">Intestato a: <strong>{name}</strong></p>
+        <p className="text-lg mt-2">Intestato a: <strong>{name}</strong></p>
         <p className="text-sm italic mt-4">
           Grazie di cuore per il vostro affetto e la vostra generosità! ❤️
         </p>

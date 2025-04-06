@@ -15,6 +15,7 @@ const GuestForm: React.FC<GuestFormProps> = ({ id, className }) => {
     rsvp: "yes",
     meal: "",
   });
+  const [loading, setLoading] = useState(false);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -22,7 +23,7 @@ const GuestForm: React.FC<GuestFormProps> = ({ id, className }) => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-
+    setLoading(true);
     try {
       const response = await fetch("/api/submitGuest", {
         method: "POST",
@@ -39,6 +40,8 @@ const GuestForm: React.FC<GuestFormProps> = ({ id, className }) => {
     } catch (error) {
       console.error("Error submitting guest:", error);
       alert("⚠️ There was an error submitting the form.");
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -106,11 +109,13 @@ const GuestForm: React.FC<GuestFormProps> = ({ id, className }) => {
           onClick={handleSubmit}
           style={{
             textDecoration: 'none',
-            color: '#8b8585'
+            color: '#8b8585',
+            pointerEvents: loading ? 'none' : 'auto',
+            opacity: loading ? 0.6 : 1
           }}
-          className="w-full mt-4 bg-[#ece9e5] hover:bg-[#e5dfda] text-[#8b8585] text-center rounded-lg py-2 text-lg no-underline block"
+          className="w-full mt-4 bg-[#ece9e5] hover:bg-[#e5dfda] text-[#8b8585] text-center rounded-lg py-2 text-lg no-underline block transition"
         >
-          Invia RSVP
+          {loading ? "Invio in corso..." : "Invia RSVP"}
         </a>
       </Form>
     </div>

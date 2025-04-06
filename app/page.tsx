@@ -35,6 +35,7 @@ export default function Home() {
         />
         <ContactInfo id="contacts" className="col-span-full" />
         <PhotoCarousel
+          id="story"
           className="col-span-full"
           images={[
             "/photo1.JPG",

@@ -30,6 +30,12 @@ body {
   border-color: #8b8585;
 }
 
+form {
+  input {
+    color: #8b8585 !important;
+  }
+}
+
 nav {
   .navbar-brand {
     color: #8b8585;

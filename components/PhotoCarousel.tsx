@@ -10,9 +10,10 @@ import "swiper/css/navigation";
 interface PhotoCarouselProps {
     images: string[];
     className?: string;
+    id?: string;
 }
 
-const PhotoCarousel: React.FC<PhotoCarouselProps> = ({ images, className = "" }) => {
+const PhotoCarousel: React.FC<PhotoCarouselProps> = ({ images, className = "" , id}) => {
     const [isOpen, setIsOpen] = useState(false);
     const [activeIndex, setActiveIndex] = useState(0);
     const modalRef = useRef<HTMLDivElement>(null);
@@ -47,7 +48,7 @@ const PhotoCarousel: React.FC<PhotoCarouselProps> = ({ images, className = "" })
     };
 
     return (
-        <div className={`w-full max-w-7xl mx-auto py-12 ${className}`}>
+        <div id={id} className={`w-full max-w-7xl mx-auto py-12 ${className}`}>
             <h2 className="w-full text-center font-serif italic text-3xl font-semibold text-[#8b8585] pb-8">The Story So Far...</h2>
             <Swiper
                 modules={[Navigation]}

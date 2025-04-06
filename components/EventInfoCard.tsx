@@ -70,17 +70,17 @@ const EventInfoCard: React.FC = () => {
 
     return (
         <div className="absolute top-full left-1/2 transform -translate-x-1/2 -translate-y-1/2
-    w-full max-w-4xl h-[200px]
-    bg-white text-[#8b8585] rounded-2xl shadow-lg
-    px-8 py-6 flex flex-col lg:flex-row items-stretch gap-8 font-serif z-10">
+w-full max-w-4xl bg-white text-[#8b8585] rounded-2xl shadow-lg
+px-4 sm:px-6 lg:px-8 py-6 flex flex-col lg:flex-row items-stretch gap-6 font-serif z-10">
+
             {/* Countdown */}
             <div className="flex flex-col items-center justify-center text-center flex-1">
-                <p className="text-xl mb-0">Quanto manca al nostro "Sì"</p>
+                <p className="text-lg sm:text-xl mb-2">Mancano al nostro grande giorno</p>
                 <div className="flex gap-4 justify-center">
                     {Object.entries(timeLeft).map(([label, value]) => (
                         <div className="text-center" key={label}>
-                            <div className="text-3xl font-bold">{value}</div>
-                            <p className="text-sm capitalize">{label}</p>
+                            <div className="text-2xl sm:text-3xl font-bold">{value}</div>
+                            <p className="text-xs sm:text-sm capitalize">{label}</p>
                         </div>
                     ))}
                 </div>
@@ -91,20 +91,18 @@ const EventInfoCard: React.FC = () => {
 
             {/* Weather */}
             <div className="flex flex-col items-center justify-center text-center flex-1">
-                <div className="text-xl">Il meteo oggi a Lecce è:</div>
+                <div className="text-lg sm:text-xl mb-2">Il meteo oggi a Lecce è:</div>
                 {error ? (
                     <p className="text-sm text-gray-500">🌦️ Non disponibile</p>
                 ) : !weather ? (
                     <p className="text-sm text-gray-500">Caricamento meteo...</p>
                 ) : (
-                    <div className="flex items-center justify-center gap-4">
-                        <img src={iconUrl} alt="Icona meteo" className="w-16 h-16" />
-                        <div className="text-left text-sm">
-                            <p className="text-m mb-0">{Math.round(weather.main.temp)}°C</p>
-                            <p className="text-m mb-0">
-                                Max {Math.round(weather.main.temp_max)}° / Min {Math.round(weather.main.temp_min)}°
-                            </p>
-                            <p className="text-m mb-0">Percepita: {Math.round(weather.main.feels_like)}°C</p>
+                    <div className="flex items-center justify-center gap-3">
+                        <img src={iconUrl} alt="Icona meteo" className="w-14 h-14 sm:w-16 sm:h-16" />
+                        <div className="text-left text-sm sm:text-base">
+                            <p className="mb-0">{Math.round(weather.main.temp)}°C</p>
+                            <p className="mb-0">Max {Math.round(weather.main.temp_max)}° / Min {Math.round(weather.main.temp_min)}°</p>
+                            <p className="mb-0">Percepita: {Math.round(weather.main.feels_like)}°C</p>
                         </div>
                     </div>
                 )}

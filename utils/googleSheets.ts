@@ -1,11 +1,4 @@
 import { google } from "googleapis";
-import { JWT } from "google-auth-library";
-import fs from "fs";
-import path from "path";
-
-// Load service account key from JSON file
-const KEY_PATH = path.join(process.cwd(), "keys", "service-account.json");
-const SCOPES = ["https://www.googleapis.com/auth/spreadsheets"];
 
 // Read and parse the key file
 const auth = new google.auth.JWT({
@@ -18,14 +11,14 @@ const sheets = google.sheets({ version: "v4", auth });
 
 export async function addGuestToSheet(guest: {
   name: string;
-  email: string;
+  phone: string;
   rsvp: string;
   meal: string;
 }) {
   const SPREADSHEET_ID = process.env.GOOGLE_SHEET_ID;
   const RANGE = "Guests!A:D";
 
-  const values = [[guest.name, guest.email, guest.rsvp, guest.meal]];
+  const values = [[guest.name, guest.phone, guest.rsvp, guest.meal]];
 
   await sheets.spreadsheets.values.append({
     spreadsheetId: SPREADSHEET_ID,

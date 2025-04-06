@@ -43,25 +43,25 @@ const timeline: TimelineBlock[] = [
 
 const WeddingTimeline: React.FC<WeddingTimelineProps> = ({ className = "" }) => {
     return (
-        <div className={`w-full max-w-6xl mx-auto px-8 text-2xl border-y border-[#c4c4c4] ${className}`}>
+        <div className={`w-full max-w-6xl mx-auto px-4 sm:px-8 text-xl sm:text-2xl border-y border-[#c4c4c4] ${className}`}>
             {timeline.map((block, blockIdx) => (
                 <div key={blockIdx} className={`mb-20 ${blockIdx > 0 ? "border-t border-[#c4c4c4] pt-12" : "pt-12"}`}>
 
                     <div>
                         {block.steps.map((step, stepIdx) => (
-                            <div key={stepIdx} className="grid grid-cols-2 gap-20 items-start py-4">
-                                <span className="text-3xl text-right">{step.time}</span>
+                            <div key={stepIdx} className="grid grid-cols-1 sm:grid-cols-2 gap-8 items-start py-4 text-center sm:text-left">
+                                <span className="text-2xl sm:text-3xl text-center sm:text-right sm:pr-4">{step.time}</span>
                                 <div>
-                                    <p className="text-2xl mb-0">{step.description}</p>
+                                    <p className="text-xl sm:text-2xl mb-0">{step.description}</p>
                                     {step.subtitle && (
-                                        <div className="text-m mb-1 mt-4">{step.subtitle}</div>
+                                        <div className="text-base sm:text-lg mb-1 mt-4">{step.subtitle}</div>
                                     )}
                                     {step.text && (
-                                        <div className="text-m mb-1">{step.text}</div>
+                                        <div className="text-base sm:text-lg mb-1">{step.text}</div>
                                     )}
                                     {block.image && stepIdx === block.steps.length - 1 && (
                                         <div className="w-full rounded-lg overflow-hidden my-4">
-                                            <img src={block.image} alt="" className="w-50 h-full object-cover" />
+                                            <img src={block.image} alt="" className="w-full h-48 sm:h-64 object-cover" />
                                         </div>
                                     )}
                                     {stepIdx === block.steps.length - 1 && block.mapLink && (step.subtitle || step.text) && (

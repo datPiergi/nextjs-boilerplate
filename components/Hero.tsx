@@ -33,8 +33,8 @@ const Hero: React.FC = () => {
 
       {/* Text Content */}
       <div className="relative z-10 flex flex-col items-center gap-6">
-        <span className="font-script text-9xl">Erika & Piergiorgio</span>
-        <p className="text-2xl mt-4">Ci sposiamo! E non vediamo l'ora di festeggiare con voi</p>
+        <span className="font-script text-5xl sm:text-6xl md:text-8xl lg:text-9xl">Erika & Piergiorgio</span>
+        <p className="text-xl sm:text-2xl mt-4">Ci sposiamo! E non vediamo l'ora di festeggiare con voi</p>
         <WeddingInvitationModal />
       </div>
     </div>
