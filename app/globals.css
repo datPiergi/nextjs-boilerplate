@@ -61,6 +61,22 @@ nav {
   .navbar-nav .nav-link.disabled:hover {
     color: #8b8585;
   }
+
+  .navbar-nav {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    gap: 1rem !important;
+  }
+  
+  @media (min-width: 640px) {
+    .navbar-collapse {
+      justify-content: flex-end;
+      padding-right: 0.5rem;
+      gap: 1.2rem !important;
+    }
+  }
+  
 }
 
 .swiper-button-next,

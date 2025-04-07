@@ -9,10 +9,11 @@ const CustomNavbar: React.FC = () => {
       <Navbar.Brand href="#" className="pl-2 font-script" style={{ fontSize: '2rem' }}>Erika & Piergiorgio</Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav" className="w-full">
-        <Nav className="ms-auto w-3/5 d-flex justify-content-end gap-4 pe-2">
+        <Nav className="custom-style">
           <Nav.Link style={{ fontSize: '1.25rem' }} href="#program">Programma</Nav.Link>
           <Nav.Link style={{ fontSize: '1.25rem' }} href="#rsvp">RSVP</Nav.Link>
           <Nav.Link style={{ fontSize: '1.25rem' }} href="#donation">Gifts</Nav.Link>
+          <Nav.Link style={{ fontSize: '1.25rem' }} href="#song">Suggerisci una canzone</Nav.Link>
           <Nav.Link style={{ fontSize: '1.25rem' }} href="#contacts">Contatti</Nav.Link>
           <Nav.Link style={{ fontSize: '1.25rem' }} href="#story">The Story So Far</Nav.Link>
         </Nav>
