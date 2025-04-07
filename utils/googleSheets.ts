@@ -29,3 +29,19 @@ export async function addGuestToSheet(guest: {
 
   console.log("Guest added:", guest);
 }
+
+export async function addSongToSheet(song: { song: string }) {
+  const SPREADSHEET_ID = process.env.GOOGLE_SHEET_ID;
+  const RANGE = "Songs!A:A";
+
+  const values = [[song.song]];
+
+  await sheets.spreadsheets.values.append({
+    spreadsheetId: SPREADSHEET_ID,
+    range: RANGE,
+    valueInputOption: "USER_ENTERED",
+    requestBody: { values },
+  });
+
+  console.log("Song added:", song);
+}

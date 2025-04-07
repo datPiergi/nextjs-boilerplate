@@ -8,6 +8,7 @@ import EventInfoCard from "@/components/EventInfoCard";
 import WeddingTimeline from "@/components/WeddingTimeline";
 import SectionDivider from "@/components/SectionDivider";
 import PhotoCarousel from "@/components/PhotoCarousel";
+import SongSuggestionForm from "@/components/SongSuggestionForm";
 
 export default function Home() {
   return (
@@ -17,7 +18,7 @@ export default function Home() {
         <Hero />
         <EventInfoCard /> {/* Place it immediately after Hero */}
       </div>
-      <div className="grid grid-cols-1 gap-y-8 sm:grid-cols-2 lg:grid-cols-3 max-w-7xl mx-auto px-6 lg:px-12 py-16 pt-40 sm:pt-46 text-[#8b8585]">
+      <div className="grid grid-cols-1 gap-y-8 sm:grid-cols-2 lg:grid-cols-3 max-w-7xl mx-auto px-6 lg:px-12 py-16 pt-50 sm:pt-46 text-[#8b8585]">
 
         <SectionTitle id="program" className="col-span-full text-5xl">WEDDING DAY</SectionTitle>
         <SectionTitle className="col-span-full text-3xl">14 giugno 2025</SectionTitle>
@@ -33,6 +34,8 @@ export default function Home() {
           id="donation"
           className="col-span-full"
         />
+        <SectionDivider className="col-span-full" />
+        <SongSuggestionForm id="song" className="col-span-full"/>
         <ContactInfo id="contacts" className="col-span-full" />
         <PhotoCarousel
           id="story"

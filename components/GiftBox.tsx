@@ -35,7 +35,7 @@ const GiftBox: React.FC<GiftBoxProps> = ({ iban, name, id, className }) => {
           </div>
         </div>
 
-        <p className="text-lg mt-2">Intestato a: <strong>{name}</strong></p>
+        <p className="text-lg mt-2">Intestato a: {name}</p>
         <p className="text-sm italic mt-4">
           Grazie di cuore per il vostro affetto e la vostra generosità! ❤️
         </p>

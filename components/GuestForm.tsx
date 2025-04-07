@@ -1,7 +1,7 @@
 "use client";
 
-import { useState } from "react";
-import { Form, Button } from "react-bootstrap";
+import { useState, useEffect } from "react";
+import { Form } from "react-bootstrap";
 
 interface GuestFormProps {
   id: string;
@@ -9,6 +9,7 @@ interface GuestFormProps {
 }
 
 const GuestForm: React.FC<GuestFormProps> = ({ id, className }) => {
+  const [hasMounted, setHasMounted] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
     phone: "",
@@ -17,7 +18,13 @@ const GuestForm: React.FC<GuestFormProps> = ({ id, className }) => {
   });
   const [loading, setLoading] = useState(false);
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+  useEffect(() => {
+    setHasMounted(true);
+  }, []);
+
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
+  ) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
@@ -31,9 +38,7 @@ const GuestForm: React.FC<GuestFormProps> = ({ id, className }) => {
         body: JSON.stringify(formData),
       });
 
-      if (!response.ok) {
-        throw new Error("Failed to submit form");
-      }
+      if (!response.ok) throw new Error("Failed to submit form");
 
       alert("🎉 RSVP submitted successfully!");
       setFormData({ name: "", phone: "", rsvp: "yes", meal: "" });
@@ -44,6 +49,8 @@ const GuestForm: React.FC<GuestFormProps> = ({ id, className }) => {
       setLoading(false);
     }
   };
+
+  if (!hasMounted) return null;
 
   return (
     <div
@@ -108,10 +115,10 @@ const GuestForm: React.FC<GuestFormProps> = ({ id, className }) => {
           href="#"
           onClick={handleSubmit}
           style={{
-            textDecoration: 'none',
-            color: '#8b8585',
-            pointerEvents: loading ? 'none' : 'auto',
-            opacity: loading ? 0.6 : 1
+            textDecoration: "none",
+            color: "#8b8585",
+            pointerEvents: loading ? "none" : "auto",
+            opacity: loading ? 0.6 : 1,
           }}
           className="w-full mt-4 bg-[#ece9e5] hover:bg-[#e5dfda] text-[#8b8585] text-center rounded-lg py-2 text-lg no-underline block transition"
         >

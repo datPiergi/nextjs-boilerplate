@@ -5,46 +5,41 @@ import React, { useEffect, useState } from "react";
 const EventInfoCard: React.FC = () => {
     const [weather, setWeather] = useState<any>(null);
     const [error, setError] = useState(false);
+    const [timeLeft, setTimeLeft] = useState({
+        giorni: "--",
+        ore: "--",
+        minuti: "--",
+        secondi: "--",
+    });
+    const [hasMounted, setHasMounted] = useState(false);
 
     const apiKey = process.env.NEXT_PUBLIC_WEATHER_API_KEY;
     const lat = 40.3529;
     const lon = 18.1743;
 
-    // Countdown logic
-    const calculateTimeLeft = () => {
-        const targetDate = new Date("2025-06-14T16:00:00");
-        const now = new Date();
-        const difference = +targetDate - +now;
+    useEffect(() => {
+        setHasMounted(true);
 
-        let timeLeft = {
-            giorni: "00",
-            ore: "00",
-            minuti: "00",
-            secondi: "00",
-        };
+        const calculateTimeLeft = () => {
+            const targetDate = new Date("2025-06-14T16:00:00");
+            const now = new Date();
+            const difference = +targetDate - +now;
 
-        if (difference > 0) {
-            timeLeft = {
+            return {
                 giorni: String(Math.floor(difference / (1000 * 60 * 60 * 24))).padStart(2, "0"),
                 ore: String(Math.floor((difference / (1000 * 60 * 60)) % 24)).padStart(2, "0"),
                 minuti: String(Math.floor((difference / 1000 / 60) % 60)).padStart(2, "0"),
                 secondi: String(Math.floor((difference / 1000) % 60)).padStart(2, "0"),
             };
-        }
+        };
 
-        return timeLeft;
-    };
-
-    const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
-
-    useEffect(() => {
         const timer = setInterval(() => {
             setTimeLeft(calculateTimeLeft());
         }, 1000);
+
         return () => clearInterval(timer);
     }, []);
 
-    // Fetch weather
     useEffect(() => {
         const fetchWeather = async () => {
             try {
@@ -70,14 +65,19 @@ const EventInfoCard: React.FC = () => {
 
     return (
         <div className="absolute top-full left-1/2 transform -translate-x-1/2 -translate-y-1/2
-w-full max-w-4xl bg-white text-[#8b8585] rounded-2xl shadow-lg
-px-4 sm:px-6 lg:px-8 py-6 flex flex-col lg:flex-row items-stretch gap-6 font-serif z-10">
-
+      w-full max-w-4xl bg-white text-[#8b8585] rounded-2xl shadow-lg
+      px-4 sm:px-6 lg:px-8 py-6 flex flex-col lg:flex-row items-stretch gap-6 font-serif z-10"
+        >
             {/* Countdown */}
             <div className="flex flex-col items-center justify-center text-center flex-1">
-                <p className="text-lg sm:text-xl mb-2">Mancano al nostro grande giorno</p>
+                <p className="text-lg sm:text-xl mb-2">Mancano al nostro grande giorno..</p>
                 <div className="flex gap-4 justify-center">
-                    {Object.entries(timeLeft).map(([label, value]) => (
+                    {(hasMounted ? Object.entries(timeLeft) : [
+                        ["giorni", "--"],
+                        ["ore", "--"],
+                        ["minuti", "--"],
+                        ["secondi", "--"]
+                    ]).map(([label, value]) => (
                         <div className="text-center" key={label}>
                             <div className="text-2xl sm:text-3xl font-bold">{value}</div>
                             <p className="text-xs sm:text-sm capitalize">{label}</p>

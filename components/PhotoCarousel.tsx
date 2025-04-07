@@ -81,17 +81,36 @@ const PhotoCarousel: React.FC<PhotoCarouselProps> = ({ images, className = "", i
                 <div
                     ref={modalRef}
                     onClick={handleOverlayClick}
-                    className="fixed inset-0 bg-black/40 z-50 flex items-center justify-center"
+                    className="fixed inset-0 bg-black/70 sm:bg-black/40 z-50 flex items-center justify-center"
                 >
                     <div className="relative w-full max-w-4xl">
                         {/* Mobile close button */}
-                        <button
-                            onClick={closeModal}
-                            className="absolute top-4 right-8 text-white z-50 block sm:hidden"
-                            aria-label="Chiudi"
+                        <div
+                            className="position-absolute d-block d-sm-none"
+                            style={{
+                                top: "4px",
+                                right: "8px",
+                                zIndex: 1051,
+                            }}
                         >
-                            ✕
-                        </button>
+                            <button
+                                onClick={closeModal}
+                                aria-label="Chiudi"
+                                className="d-flex align-items-center justify-content-center border-0"
+                                style={{
+                                    width: "40px",
+                                    height: "40px",
+                                    borderRadius: "50%",
+                                    backgroundColor: "#f7f7f5",
+                                    color: "#000000",
+                                    fontSize: "24px",
+                                    boxShadow: "0 2px 6px rgba(0,0,0,0.15)",
+                                    cursor: "pointer",
+                                }}
+                            >
+                                &times;
+                            </button>
+                        </div>
 
                         <Swiper
                             modules={[Navigation]}

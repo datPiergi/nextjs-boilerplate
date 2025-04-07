@@ -45,7 +45,7 @@ const WeddingTimeline: React.FC<WeddingTimelineProps> = ({ className = "" }) => 
     return (
         <div className={`w-full max-w-6xl mx-auto px-4 sm:px-8 text-xl sm:text-2xl border-y border-[#c4c4c4] ${className}`}>
             {timeline.map((block, blockIdx) => (
-                <div key={blockIdx} className={`mb-20 ${blockIdx > 0 ? "border-t border-[#c4c4c4] pt-12" : "pt-12"}`}>
+                <div key={blockIdx} className={`mb-10 ${blockIdx > 0 ? "border-t border-[#c4c4c4] pt-12" : "pt-12"}`}>
 
                     <div>
                         {block.steps.map((step, stepIdx) => (
@@ -84,7 +84,7 @@ const WeddingTimeline: React.FC<WeddingTimelineProps> = ({ className = "" }) => 
                     </div>
                 </div>
             ))}
-            <SectionTitle className="col-span-full text-xl mb-8"><span className="italic">DRESS CODE</span> : ELEGANTE</SectionTitle>
+            <SectionTitle className="col-span-full text-base sm:text-xl mb-8"><span className="italic">DRESS CODE</span> : ELEGANTE</SectionTitle>
             <SocialTags className="col-span-full mb-8" />
         </div>
     );
