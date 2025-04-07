@@ -50,8 +50,8 @@ const WeddingTimeline: React.FC<WeddingTimelineProps> = ({ className = "" }) => 
                     <div>
                         {block.steps.map((step, stepIdx) => (
                             <div key={stepIdx} className="grid grid-cols-1 sm:grid-cols-2 gap-8 items-start py-4 text-center sm:text-left">
-                                <span className="text-2xl sm:text-3xl text-center sm:text-right sm:pr-4">{step.time}</span>
-                                <div>
+                                <span className="text-2xl sm:text-3xl text-center text-sm-end sm:pr-4">{step.time}</span>
+                                <div className="text-sm-start">
                                     <p className="text-xl sm:text-2xl mb-0">{step.description}</p>
                                     {step.subtitle && (
                                         <div className="text-base sm:text-lg mb-1 mt-4">{step.subtitle}</div>
@@ -60,8 +60,8 @@ const WeddingTimeline: React.FC<WeddingTimelineProps> = ({ className = "" }) => 
                                         <div className="text-base sm:text-lg mb-1">{step.text}</div>
                                     )}
                                     {block.image && stepIdx === block.steps.length - 1 && (
-                                        <div className="w-full rounded-lg overflow-hidden my-4">
-                                            <img src={block.image} alt="" className="w-full h-48 sm:h-64 object-cover" />
+                                        <div className="w-full sm:w-98 rounded-lg overflow-hidden my-4">
+                                            <img src={block.image} alt="" className="w-98 h-48 sm:h-64 object-cover" />
                                         </div>
                                     )}
                                     {stepIdx === block.steps.length - 1 && block.mapLink && (step.subtitle || step.text) && (

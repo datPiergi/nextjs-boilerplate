@@ -6,7 +6,7 @@ import { Navbar, Nav } from "react-bootstrap";
 const CustomNavbar: React.FC = () => {
   return (
     <Navbar expand="lg" variant="light" style={{ backgroundColor: "#f7f7f5" }} className="shadow-md w-full">
-      <Navbar.Brand href="#" className="pl-2 font-script" style={{ fontSize: '2rem' }}>Erika & Piergiorgio</Navbar.Brand>
+      <Navbar.Brand href="#" className="pl-2 font-script" style={{ fontSize: '2rem', fontFamily: 'var(--font-rouge-script)' }}>Erika & Piergiorgio</Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav" className="w-full">
         <Nav className="custom-style">

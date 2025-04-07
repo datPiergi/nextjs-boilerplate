@@ -3,14 +3,6 @@
 import React from "react";
 import Image from "next/image";
 import WeddingInvitationModal from "./WeddingInvitationModal";
-import { Rouge_Script } from 'next/font/google';
-
-
-export const rougeScript = Rouge_Script({
-  weight: "400",
-  subsets: ["latin"],
-  variable: "--font-rouge-script",
-});
 
 const Hero: React.FC = () => {
   return (
@@ -33,7 +25,7 @@ const Hero: React.FC = () => {
 
       {/* Text Content */}
       <div className="relative z-10 flex flex-col items-center gap-6">
-        <span className="font-script text-5xl sm:text-6xl md:text-8xl lg:text-9xl">Erika & Piergiorgio</span>
+        <span className="font-script text-5xl sm:text-6xl md:text-8xl lg:text-9xl" style={{ fontFamily: 'var(--font-rouge-script)' }}>Erika & Piergiorgio</span>
         <p className="text-xl sm:text-2xl sm:mt-4">Ci sposiamo! E non vediamo l'ora di festeggiare con voi</p>
         <WeddingInvitationModal />
       </div>
