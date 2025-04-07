@@ -70,7 +70,7 @@ const EventInfoCard: React.FC = () => {
         >
             {/* Countdown */}
             <div className="flex flex-col items-center justify-center text-center flex-1">
-                <p className="text-lg sm:text-xl mb-2">Mancano al nostro grande giorno..</p>
+                <p className="text-lg sm:text-xl mb-2">Mancano al nostro grande giorno...</p>
                 <div className="flex gap-4 justify-center">
                     {(hasMounted ? Object.entries(timeLeft) : [
                         ["giorni", "--"],

@@ -2,7 +2,6 @@
 
 import React from "react";
 import SectionTitle from "./SectionTitle";
-import SocialTags from "./SocialTags";
 
 interface TimelineStep {
     time: string;
@@ -85,7 +84,6 @@ const WeddingTimeline: React.FC<WeddingTimelineProps> = ({ className = "" }) => 
                 </div>
             ))}
             <SectionTitle className="col-span-full text-base sm:text-xl mb-8"><span className="italic">DRESS CODE</span> : ELEGANTE</SectionTitle>
-            <SocialTags className="col-span-full mb-8" />
         </div>
     );
 };

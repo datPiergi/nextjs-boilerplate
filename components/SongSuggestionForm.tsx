@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { Form } from "react-bootstrap";
+import SocialTags from "./SocialTags";
 
 interface SongSuggestionFormProps {
   id: string;
@@ -39,9 +40,9 @@ const SongSuggestionForm: React.FC<SongSuggestionFormProps> = ({ id, className }
 
   return (
     <div id={id} className={`w-full mx-auto max-w-2xl bg-white text-[#8b8585] rounded-2xl shadow-lg px-8 py-10 flex flex-col items-center font-serif ${className}`}>
-      <h2 className="text-3xl font-semibold text-center mb-3">Suggerisci una canzone!</h2>
+      <h2 className="text-3xl font-semibold text-center mb-3">Aiutaci a creare la playlist perfetta</h2>
       <p className="text-center text-lg italic mb-6">
-        Se avete una canzone che vi fa pensare a noi o che volete ballare con noi, fatecelo sapere!
+        Se avete una canzone che vi fa pensare a noi o che volete ballare con noi, suggeritecela qui!
       </p>
       <Form onSubmit={handleSubmit} className="w-full grid grid-cols-1 gap-6 max-w-xl">
         <Form.Group>
@@ -51,7 +52,7 @@ const SongSuggestionForm: React.FC<SongSuggestionFormProps> = ({ id, className }
             name="song"
             value={song}
             onChange={(e) => setSong(e.target.value)}
-            placeholder="Es. Marry You - Bruno Mars"
+            placeholder="Es. MIROH - Stray Kids"
             required
             className="rounded-lg shadow-sm"
           />
@@ -71,6 +72,7 @@ const SongSuggestionForm: React.FC<SongSuggestionFormProps> = ({ id, className }
           {loading ? "Invio in corso..." : "Invia suggerimento"}
         </button>
       </Form>
+      <SocialTags className="mt-8" />
     </div>
   );
 };

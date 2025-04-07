@@ -68,6 +68,7 @@ const GuestForm: React.FC<GuestFormProps> = ({ id, className }) => {
             onChange={handleChange}
             placeholder="Il tuo nome completo"
             required
+            style={{ color: "#8b8585" }}
             className="rounded-lg shadow-sm"
           />
         </Form.Group>
@@ -81,6 +82,7 @@ const GuestForm: React.FC<GuestFormProps> = ({ id, className }) => {
             onChange={handleChange}
             placeholder="Inserisci il tuo numero di telefono"
             required
+            style={{ color: "#8b8585" }}
             className="rounded-lg shadow-sm"
           />
         </Form.Group>
@@ -94,20 +96,22 @@ const GuestForm: React.FC<GuestFormProps> = ({ id, className }) => {
             required
             style={{ color: "#8b8585" }}
             className="rounded-lg shadow-sm text-[#8b8585]"
-          >
+            >
             <option value="yes">Sì, ci sarò! 🎉</option>
             <option value="no">No, purtroppo non potrò esserci 😢</option>
           </Form.Select>
         </Form.Group>
 
         <Form.Group>
-          <Form.Label className="text-lg">Allergie ed intolleranze</Form.Label>
+          <Form.Label className="text-lg">Allergie, intolleranze o altro</Form.Label>
           <Form.Control
             type="text"
             name="meal"
             value={formData.meal}
             onChange={handleChange}
             className="rounded-lg shadow-sm"
+            style={{ color: "#8b8585" }}
+            placeholder="Vegetariano, allergia al glutine, ecc."
           />
         </Form.Group>
 
