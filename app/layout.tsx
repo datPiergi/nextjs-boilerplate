@@ -4,7 +4,7 @@ import { Rouge_Script } from 'next/font/google';
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./globals.css";
 
-export const rougeScript = Rouge_Script({
+const rougeScript = Rouge_Script({
   weight: '400',
   subsets: ['latin'],
   display: 'swap',
