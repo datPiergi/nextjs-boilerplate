@@ -40,11 +40,11 @@ const GuestForm: React.FC<GuestFormProps> = ({ id, className }) => {
 
       if (!response.ok) throw new Error("Failed to submit form");
 
-      alert("🎉 RSVP submitted successfully!");
+      alert("🎉 RSVP inviato con successo!");
       setFormData({ name: "", phone: "", rsvp: "yes", meal: "" });
     } catch (error) {
       console.error("Error submitting guest:", error);
-      alert("⚠️ There was an error submitting the form.");
+      alert("⚠️ C'è stato un errore.");
     } finally {
       setLoading(false);
     }
