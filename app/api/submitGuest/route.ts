@@ -6,11 +6,11 @@ export async function POST(req: Request) {
     const body = await req.json();
     const { name, phone, rsvp, meal } = body;
 
-    if (!name || !phone || !rsvp || !meal) {
+    if (!name || !phone || !rsvp) {
       return NextResponse.json({ error: "Missing required fields" }, { status: 400 });
     }
-
-    await addGuestToSheet({ name, phone, rsvp, meal });
+    
+    await addGuestToSheet({ name, phone, rsvp, meal: meal || 'N/A' });
 
     return NextResponse.json({ message: "Guest added successfully!" }, { status: 200 });
   } catch (error) {
