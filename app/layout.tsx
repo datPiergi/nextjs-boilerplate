@@ -28,6 +28,7 @@ export default function RootLayout({
   return (
     <html lang="it">
       <head>
+        <meta name="robots" content="noindex"></meta>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css"/>
       </head>
       <body

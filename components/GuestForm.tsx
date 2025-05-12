@@ -129,6 +129,7 @@ const GuestForm: React.FC<GuestFormProps> = ({ id, className }) => {
           {loading ? "Invio in corso..." : "Invia RSVP"}
         </a>
       </Form>
+      <div className="text-l md:text-xl text-center mt-4">È gradita conferma entro il 31 maggio</div>
     </div>
   );
 };
