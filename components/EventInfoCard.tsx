@@ -23,7 +23,7 @@ const EventInfoCard: React.FC = () => {
         const calculateTimeLeft = () => {
             const targetDate = new Date("2025-06-14T16:00:00");
             const now = new Date();
-            const difference = +targetDate - +now;
+            const difference = +now - +targetDate;
 
             return {
                 giorni: String(Math.floor(difference / (1000 * 60 * 60 * 24))).padStart(2, "0"),
@@ -70,7 +70,7 @@ const EventInfoCard: React.FC = () => {
         >
             {/* Countdown */}
             <div className="flex flex-col items-center justify-center text-center flex-1">
-                <p className="text-lg sm:text-xl mb-2">Mancano al nostro grande giorno...</p>
+                <p className="text-lg sm:text-xl mb-2">Siamo sposati da</p>
                 <div className="flex gap-4 justify-center">
                     {(hasMounted ? Object.entries(timeLeft) : [
                         ["giorni", "--"],
