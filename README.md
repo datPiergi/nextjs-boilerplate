@@ -1,4 +1,4 @@
-# nextjs-boilerplate
+# My Wedding Site
 
 A minimal Next.js starter with TypeScript and Tailwind CSS. Uses the App Router (`/app`), ships with sensible defaults, and is ready to deploy to Vercel.
 
