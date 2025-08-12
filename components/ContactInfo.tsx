@@ -18,13 +18,13 @@ const ContactInfo: React.FC<ContactInfoProps> = ({ id, className }) => {
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-20 pb-12 justify-items-center sm:justify-items-stretch text-center sm:text-left">
         <div className="sm:text-right">
           <h3 className="text-2xl font-semibold font-serif mb-3">Erika</h3>
-          <p className="text-lg">📞 +39 340 979 1270</p>
-          <p className="text-lg">📧 mazzeoeri@gmail.com</p>
+          <p className="text-lg">📞 </p>
+          <p className="text-lg">📧 </p>
         </div>
         <div className="sm:text-left">
           <h3 className="text-2xl font-semibold font-serif mb-3">Piergiorgio</h3>
-          <p className="text-lg">📞 +39 328 197 9424</p>
-          <p className="text-lg">📧 piergipietra@gmail.com</p>
+          <p className="text-lg">📞 </p>
+          <p className="text-lg">📧 </p>
         </div>
       </div>
     </Container>
